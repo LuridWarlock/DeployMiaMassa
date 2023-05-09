@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+import React from 'react'
 import './FrontPage.css'
 import Especialidades from "../components/Especialidades"
 import NavBar from '../components/NavBar'
