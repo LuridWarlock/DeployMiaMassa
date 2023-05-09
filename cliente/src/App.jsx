@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route Component={FrontPage} />
+        <Route exact path="/" Component={FrontPage} />
         <Route exact path="/administrador" Component={Administrador} />
       </Routes>
     </Router>
