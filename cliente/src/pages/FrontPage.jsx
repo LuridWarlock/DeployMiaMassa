@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Administrador.css"
 
-const Administrador = () => {
+const FrontPage = () => {
   return (
     <div className='cuerpoAdministrador'>
       <div className="crud">
