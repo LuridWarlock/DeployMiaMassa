@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes, 
   Route,
   Link
@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" Component={FrontPage} />
-        <Route exact path="/administrador" Component={Administrador} />
+        <Route exact path="/" component={FrontPage} />
+        <Route exact path="/administrador" component={Administrador} />
       </Routes>
     </Router>
   );
