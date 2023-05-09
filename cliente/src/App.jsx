@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" component={FrontPage} />
-        <Route exact path="/administrador" component={Administrador} />
+        <Route exact path="/" Component={FrontPage} />
+        <Route exact path="/administrador" Component={Administrador} />
       </Routes>
     </Router>
   );
