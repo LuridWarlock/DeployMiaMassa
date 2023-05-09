@@ -56,7 +56,7 @@ function FrontPage() {
       <button id='arriba' onClick={volverArriba}>UP</button>
       <div className="footer"><span className='footer'></span></div>
     </div>
-  );
+  )
 }
 
 export default FrontPage;
