@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" Component={FrontPage} />
-        <Route exact path="/"administrador" Component={Administrador} />
+        <Route exact path="/administrador" Component={Administrador} />
       </Routes>
     </Router>
   );
