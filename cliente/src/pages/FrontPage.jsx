@@ -7,15 +7,21 @@ import Agregados from '../components/Agregados'
 import Extras from '../components/Extras'
 import Contacto from '../components/Contacto'
 
-const componentes = [
-  {componente: <Promociones ref={refPromociones} titulo={"Promociones!"} />},
-  {componente: <Especialidades ref={refEspecialidades} titulo={"Especialidades"} />},
-  {componente: <Agregados ref={refAgregados} titulo={"Agregados"} />},
-  {componente: <Extras ref={refExtras} titulo={"Extras"}/>},
-  {componente: <Contacto ref={refContacto} titulo={"Contacto"}/>},
-];
-
 function FrontPage() {
+  const refPromociones = useRef(null);
+  const refEspecialidades = useRef(null);
+  const refAgregados = useRef(null);
+  const refExtras = useRef(null);
+  const refContacto = useRef(null);
+
+  const componentes = [
+    {ref: refPromociones, componente: <Promociones titulo={"Promociones!"} />},
+    {ref: refEspecialidades, componente: <Especialidades titulo={"Especialidades"} />},
+    {ref: refAgregados, componente: <Agregados titulo={"Agregados"} />},
+    {ref: refExtras, componente: <Extras titulo={"Extras"}/>},
+    {ref: refContacto, componente: <Contacto titulo={"Contacto"}/>},
+  ];
+
   const handleClick = (ref) => {
     ref?.current?.scrollIntoView({ behavior: 'smooth' });
   }
@@ -41,4 +47,4 @@ function FrontPage() {
   );
 }
 
-export default FrontPage
+export default FrontPage;
