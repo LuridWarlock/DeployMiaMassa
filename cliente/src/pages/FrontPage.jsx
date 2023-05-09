@@ -7,50 +7,38 @@ import Agregados from '../components/Agregados'
 import Extras from '../components/Extras'
 import Contacto from '../components/Contacto'
 
-const FrontPage = () => {
-  const refPromociones = useRef(null);
-  const refEspecialidades = useRef(null);
-  const refContacto = useRef(null);
-  const refAgregados = useRef(null);
-  const refExtras = useRef(null);
+const componentes = [
+  {componente: <Promociones ref={refPromociones} titulo={"Promociones!"} />},
+  {componente: <Especialidades ref={refEspecialidades} titulo={"Especialidades"} />},
+  {componente: <Agregados ref={refAgregados} titulo={"Agregados"} />},
+  {componente: <Extras ref={refExtras} titulo={"Extras"}/>},
+  {componente: <Contacto ref={refContacto} titulo={"Contacto"}/>},
+];
 
-  const handleClickPromociones = () => {
-    refPromociones.current?.scrollIntoView({ block: 'start', blockOffset: 10, behavior: 'smooth' });
+function FrontPage() {
+  const handleClick = (ref) => {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
   }
-  const handleClickEspecialidades = () => {
-    refEspecialidades.current?.scrollIntoView({ behavior: 'smooth' });
-  }
-  const handleClickAgregados = () => {
-    refAgregados.current?.scrollIntoView({ behavior: 'smooth' });
-  }
-  const handleClickContacto = () => {
-    refContacto.current?.scrollIntoView({ behavior: 'smooth' });
-  }
-  const handleClickExtras = () => {
-    refExtras.current?.scrollIntoView({ behavior: 'smooth' });
-  }
+
   const volverArriba = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-  
- return (
+
+  return (
     <div className='cuerpo'>
       <NavBar 
-        handleClickPromociones={handleClickPromociones} 
-        handleClickEspecialidades={handleClickEspecialidades} 
-        handleClickAgregados={handleClickAgregados}
-        handleClickExtras={handleClickExtras} 
-        handleClickContacto={handleClickContacto}
-        />
-      <Promociones ref={refPromociones} titulo={"Promociones!"} />
-      <Especialidades ref={refEspecialidades} titulo={"Especialidades"} />
-      <Agregados ref={refAgregados} titulo={"Agregados"} />
-      <Extras ref={refExtras} titulo={"Extras"}/>
-      <Contacto ref={refContacto} titulo={"Contacto"}/>
+        handleClick={(ref) => handleClick(ref)}
+        componentes={componentes}
+      />
+      {componentes.map((item, index) => (
+        <div key={index} ref={item.ref}>
+          {item.componente}
+        </div>
+      ))}
       <button id='arriba' onClick={volverArriba}>UP</button>
       <div className="footer"><span className='footer'></span></div>
     </div>
-  )
+  );
 }
 
 export default FrontPage
