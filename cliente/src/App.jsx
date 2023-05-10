@@ -14,7 +14,7 @@ import { Home } from "./components/Home";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 function App() {
   return (
-    <Router basename="/index.html">
+    <Router>
       <AuthProvider>
         <Routes>
           <Route exact path="/" Component={FrontPage} />
