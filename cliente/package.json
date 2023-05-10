@@ -1,5 +1,6 @@
 {
   "name": "miamassa",
+  "homepage": "https://deploy-mia-massa-mk2c.vercel.app",
   "version": "0.1.0",
   "proxy": "http://localhost:8000/",
   "private": true,
